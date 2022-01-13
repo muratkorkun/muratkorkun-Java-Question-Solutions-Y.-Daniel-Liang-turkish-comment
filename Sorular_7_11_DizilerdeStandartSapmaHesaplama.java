@@ -31,15 +31,14 @@ public static double ortalamaHesapla(double[] dizi) { //burada döngü ile ortalam
 	return ortalama;
 }
 public static double standartSapmaHesaplama (double[] dizi) { ///Burada dizideki sayýlar toplamý ve sayilarin kareleri toplami bize formulde lazým olduðundan döngü içinde gerek iþlemleri yaptýk.
+	double ortalama=ortalamaHesapla(dizi); // Burada bir önceki yazdýðýmýz metdou kullandýk ayný dizi üzerinde.
 	double standartSapma=0;
-	double sayilarToplami=0;
 	double kareleriToplami=0;
 	for (int i = 0; i < dizi.length; i++) {
-		sayilarToplami += dizi[i];
-		kareleriToplami += Math.pow(dizi[i], 2);
+		kareleriToplami+=Math.pow((dizi[i]-ortalama),2);// Herbir döngüde tekrar tekrar iþlemi yaparak kareleri toplamina ekledik.
 	}
 	// standart sapma formulünü anlayana kadar caným çýktý ama en sonunda aþaðýdaki þekilde net bir çözüme ulaþabildim.
-	standartSapma=Math.pow((kareleriToplami-Math.pow(sayilarToplami, 2)/dizi.length)/(dizi.length-1),0.5); // kare alýrken kullandýðým metodla 1/2 yani 0.5 in karesini aldýðýmda karekökünü almýþ oluyorum. Yani Math.sqrt() metoduyla ayný iþi yapmýþ oluyoruz.
+	standartSapma=Math.sqrt(kareleriToplami/(dizi.length-1)); // kare alýrken isterseniz Math.pow(sayi, 0.5) yaparak da karekök iþlemini yapabilirsiniz. Yani Math.sqrt() metodu þart deðildir. 
 	return  standartSapma;
 }
 } 
