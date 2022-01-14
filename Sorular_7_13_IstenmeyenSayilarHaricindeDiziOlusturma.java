@@ -1,13 +1,16 @@
 package Bolum07_DersteYazilanKodlar;
 
-import javax.print.attribute.IntegerSyntax;
-
 public class Sorular_7_13_IstenmeyenSayilarHaricindeDiziOlusturma {
 
 	public static void main(String[] args) {
 
-		int sayi = rasgeleSayiAl(1, 2, 4, 5, 7, 8, 9); // Bunlar rastgele üretilecek olan sayýlardan istenmeyen sayýlar olarak kabul edildi.
-		System.out.println(sayi);
+		int[] istenmeyenSayilarDizisi= {1, 2, 4, 5, 7, 8, 9}; // Bunlar rastgele üretilecek olan sayýlardan istenmeyen sayýlar olarak kabul edildi.
+		
+		System.out.print("Rastgele üretilecek 1-54 aralýðýndaki sayýlardan istemediðiniz sayýlar þunlardýr :");
+		for (int sayi : istenmeyenSayilarDizisi) {
+			System.out.printf("%3d ",sayi);
+		}
+		System.out.println("\nRastgele üretilen sayý þudur : "+ rasgeleSayiAl(istenmeyenSayilarDizisi));
 
 	}
 
