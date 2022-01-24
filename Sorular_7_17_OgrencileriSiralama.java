@@ -63,5 +63,4 @@ public class Sorular_7_17_OgrencileriSiralama {
 
 		}
 	}
-} // test örneklemi => ogrenci sayýsý, isimleri, notlarý : 5 ahmet 56 mehmet 45
-	// musa 34 beyza 80 belinay 80
+} // test örneklemi => ogrenci sayýsý, isimleri, notlarý : 5 ahmet 56 mehmet 45 musa 34 beyza 80 belinay 80
