@@ -67,4 +67,5 @@ public class Sorular_7_21_FasulyeMakinesi {
 		}
 	}
 
-}
+}    // Örneklem : 50 topu 10 slotlu fasulyemakinesi'ne atalým. =>  50 10  bu sayýlarý konsol ekranýna kopyalayýp entere basarsanýz program tek seferde çalýþacaktýr. 
+		//Ýlginç bir þekilde bilgisdayarda simüle ettiðimiz galton makineside gerçek hayattaki galton makinesine benzer sonuçlar veriyor. Ortadaki ve ortaya yakýn slotlar her zaman toplarýn yýðýldýðý yerler oluyor.
