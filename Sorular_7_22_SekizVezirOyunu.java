@@ -37,6 +37,7 @@ public class Sorular_7_22_SekizVezirOyunu {
 		return rassalSayi;
 	}
 
-} // Ýstediðiniz sayýda vezir sayýsý girdiðiniz bir program oluþturduk . Yalnýz sütun sayýsýný da vezir sayýsýna eþitledik istersek bu sayý ayrý bir deðiþken olarak kullanýcýdan alýnabilir. 
+} // Vezir sayýsý olarak istediðiniz deðeri girebilirsiniz.
+// Ýstediðiniz sayýda vezir sayýsý girdiðiniz bir program oluþturduk . Yalnýz sütun sayýsýný da vezir sayýsýna eþitledik istersek bu sayý ayrý bir deðiþken olarak kullanýcýdan alýnabilir. 
 //Ve ona göre sütun sayýsýnda bir farklýlýk olabilir fakat 4 sütundan az olursa program çalýþmayacaktýr.Çünki oyunun ana kuralý olan algoritma çalýþmayacak ve hata verecektir.
 //Mesela bu programda 3 veziri rastgele yerleþtirmek istersek 3 sütun kullanýlacaðýndan program hata verecektir.
