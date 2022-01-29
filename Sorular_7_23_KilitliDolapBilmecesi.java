@@ -17,12 +17,8 @@ public class Sorular_7_23_KilitliDolapBilmecesi {
 
 			for (int j = 1; j <= dolapSayisi; j++) {   // Dolap durumlarýný deðiþtiren durumlarý ele alýyoruz .
 				if (i * j <= dolapSayisi) {
-					if (dolapDurumu[i * j-1] == false) {  // Burada dolap sayýsý i*j den bir eksik olmasý gerekli . Çünki i nin ve j nin ikisininde 10 olduðu durumu düþünelim .
+					dolapDurumu[i*j-1]=!dolapDurumu[i*j-1];// Burada dolap sayýsý i*j den bir eksik olmasý gerekli . Çünki i nin ve j nin ikisininde 10 olduðu durumu düþünelim .
 															//Buna göre dolap indisi 100 olamayacaðýndan her zaman i*j nin 1 eksiðini hesap ediyoruz.Yani asýl eriþtiðimiz dolaplarýn sýrasýný doðrulamýþ olduk..
-						dolapDurumu[i * j-1] = true;
-					} else {
-						dolapDurumu[i * j-1] = false;
-					}
 				} else {
 					break;
 				}
