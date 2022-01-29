@@ -43,9 +43,12 @@ public class Sorular_7_21_FasulyeMakinesi {
 			slotlar[(int) (yonlerToplami + (0.5 * topRotasyon.length))]++;  // Burada  slotlar dizimizin içindeki hangi indisin (yani yönlerToplami'ndan gelen sayý) içine top düþtüðünü hesapladýk ve uygun indisin sayýsýný 1 artýrdýk. (integer aritmetiðinden faydalandýk.)
 			System.out.println();
 		}
+		
+		System.out.print("Slotlarýn içindeki toplarýn sayýsý : ");
 		for (int sayi : slotlar) {   // Burada atýlan toplarýn  slotlar dizisinde hangi indislerde biriktiðini ekrana yazdýrarak gördük.
-			System.out.print(sayi);
+			System.out.print(sayi+" ");
 		}
+		
 		slotlariYazdir(topSayisi, slotlar);
 
 	}
@@ -57,7 +60,7 @@ public class Sorular_7_21_FasulyeMakinesi {
 					System.out.print(" ");
 				} else {
 					System.out.print("O");                 // Aksi halde dýþ döngüden gelen deðer ile slotlarýn j'inci deðeri birbirine eþit ise bir tane "O" bastýk.  
-					slotlar[j]--;							// Ve slotlarýn j'inci deðerini 1 azalttýk.Çünki her satýrda bir i ve slot[j] karþýlaþtýrmasý yapýldýðýndan yazdýðýmýz deðeri 1 azaltmamýz gerekti.
+					slotlar[j]--;							// Ve slotlarýn j'inci deðerini 1 azalttýk.Çünki her satýrda bir i ve slot[j] karþýlaþtýrmasý yapýldýðýndan yazdýðýmýz deðeri 1 azaltmamýz gerekti.Burada yazdýðýmýz komut ile alltan kaçýncý satýrdaki hangi sütunda doluluk olduðunu anlamýþ olduk.
 				}
 			}
 			System.out.println();           // Satýr atmalak için boþ print komutu.
