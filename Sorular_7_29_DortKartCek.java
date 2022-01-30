@@ -16,6 +16,11 @@ public class Sorular_7_29_DortKartCek {
 		do {
 			dortKart=dortKartCek(deste); // 24 toplamý bulunana kadar kart çekildi.
 			turSayisi++;      // Kaç turda boyunca kart daðýtýldýðýný hesaplayan bir sayaç oluþturduk ve her kart daðýtým turunda bir artmasýný saðladýk.
+			int toplam=0;
+			for (int i = 0; i < dortKart.length; i++) {
+				toplam+=dortKart[i] %13+1;
+			}
+			System.out.println(turSayisi+". turda çekilen kartlarýn toplamý deðeri = "+toplam);
 			
 		} while(!toplam24Mu(dortKart));  // toplam 24 olana kadar çalýþan bir döngü oluþturduk.
 		
