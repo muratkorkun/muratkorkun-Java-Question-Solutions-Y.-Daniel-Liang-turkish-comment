@@ -7,10 +7,6 @@ public class Sorular_7_29_DortKartCek {
 	 */
 	public static void main(String[] args) {
 		
-		String[] kartNumaralari={"As","ikilisi","üçlüsü","dörtlüsü","beþlisi","altýlýsý","yedilisi","sekizlisi","dokuzlusu","onlusu","Oðlaný","Kýzý","Papazý"};  
-		
-		String[] kartTipleri={"Kupa","Maça","Karo","Sinek"};     // Destede bulunan 0-51 dahil aralýgýndaki kartlarý baðdaþtýrabilmek amacýyla String türündeki Numara ve tip dizilerini  oluþturduk.
-		
 		int[] deste=karisikDesteyiAl();     
 		
 		int[] dortKart=new int[4]; 
@@ -24,6 +20,14 @@ public class Sorular_7_29_DortKartCek {
 		} while(!toplam24Mu(dortKart));  // toplam 24 olana kadar çalýþan bir döngü oluþturduk.
 		
 		System.out.print("Tebrikler "+turSayisi+". turda 24'e ulaþtýnýz.\nKartlarýnýz ====>> \n");
+		
+		kartlariEkrandaGoster(dortKart);
+	}
+
+	public static void kartlariEkrandaGoster(int[] dortKart) {
+		String[] kartNumaralari={"As","ikilisi","üçlüsü","dörtlüsü","beþlisi","altýlýsý","yedilisi","sekizlisi","dokuzlusu","onlusu","Oðlaný","Kýzý","Papazý"};  
+		
+		String[] kartTipleri={"Kupa","Maça","Karo","Sinek"};     // Destede bulunan 0-51 dahil aralýgýndaki kartlarý baðdaþtýrabilmek amacýyla String türündeki Numara ve tip dizilerini  oluþturduk.
 		
 		for (int i = 0; i < dortKart.length; i++) {
 			System.out.println(kartTipleri[dortKart [i] / 13]+" "+kartNumaralari[dortKart [i] % 13]);  //Ýnteger aritmetiðinden faydalanarak çekilen dört kartýn deðerlerini kartTiplerinin ve kartNumaralarýnýn indisleriyle baðdaþtýrdýk.
@@ -45,17 +49,14 @@ public class Sorular_7_29_DortKartCek {
 			deste[i]=deste[rassalSayi];
 			deste[rassalSayi]=temp;
 		}
-		
 		return deste;   // Karýþýk desteyi methoddan dönderdik.
 	}
 	
 	public static int[] dortKartCek(int[] deste) {  //Desteden dort kart çektik
 		int[] dortKart=new int[4];
-		int rassalSayi=0;
-		
+	
 		for (int i = 0; i < 4; i++) {
-			rassalSayi=(int)(Math.random()*52);
-			dortKart[i]=deste[rassalSayi];
+			dortKart[i]=deste[(int)(Math.random()*52)];  // Rastgele bir kart çekiliyor.
 		}
 		return dortKart;
 	}
