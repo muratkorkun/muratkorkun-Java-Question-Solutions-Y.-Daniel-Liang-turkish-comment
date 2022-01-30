@@ -24,7 +24,7 @@ public class Sorular_7_29_DortKartCek {
 			
 		} while(!toplam24Mu(dortKart));  // toplam 24 olana kadar çalýþan bir döngü oluþturduk.
 		
-		System.out.print("Tebrikler "+turSayisi+". turda 24'e ulaþtýnýz.\nKartlarýnýz ====>> \n");
+		System.out.print("Tebrikler "+turSayisi+". turda 24'e ulaþtýnýz.\nKartlarýnýz ====>> | ");
 		
 		kartlariEkrandaGoster(dortKart);
 	}
@@ -35,7 +35,7 @@ public class Sorular_7_29_DortKartCek {
 		String[] kartTipleri={"Kupa","Maça","Karo","Sinek"};     // Destede bulunan 0-51 dahil aralýgýndaki kartlarý baðdaþtýrabilmek amacýyla String türündeki Numara ve tip dizilerini  oluþturduk.
 		
 		for (int i = 0; i < dortKart.length; i++) {
-			System.out.println(kartTipleri[dortKart [i] / 13]+" "+kartNumaralari[dortKart [i] % 13]);  //Ýnteger aritmetiðinden faydalanarak çekilen dört kartýn deðerlerini kartTiplerinin ve kartNumaralarýnýn indisleriyle baðdaþtýrdýk.
+			System.out.print(kartTipleri[dortKart [i] / 13]+" "+kartNumaralari[dortKart [i] % 13]+" | ");  //Ýnteger aritmetiðinden faydalanarak çekilen dört kartýn deðerlerini kartTiplerinin ve kartNumaralarýnýn indisleriyle baðdaþtýrdýk.
 		}
 	}
 	
