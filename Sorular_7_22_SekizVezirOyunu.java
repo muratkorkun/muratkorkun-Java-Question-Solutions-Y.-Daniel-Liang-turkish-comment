@@ -5,49 +5,51 @@ import java.util.Scanner;
 public class Sorular_7_22_SekizVezirOyunu {
 
 	public static void main(String[] args) {
-		System.out.println("Lütfen vezir sayısını giriniz");
+		System.out.println("LÃ¼tfen vezir sayÄ±sÄ±nÄ± giriniz");
 
 		Scanner klavye = new Scanner(System.in);
 		int vezirSayisi = klavye.nextInt();
 		klavye.close();
-		int konum = (int) (Math.random() * vezirSayisi);  // ilk konumu bulmak ve konum değişkenini ilklendirmek için rastgele bir sayı ürettik.
-		boolean[] konumlar=new boolean[vezirSayisi];     //Dikey konumda sayının önceden kullanıldığını tespit edebilmek için  bir boolean dizi oluşturduk.
+		int konum = (int) (Math.random() * vezirSayisi);  // ilk konumu bulmak ve konum deÄŸiÅŸkenini ilklendirmek iÃ§in rastgele bir sayÄ± Ã¼rettik.
+		boolean[] konumlar=new boolean[vezirSayisi];     //Dikey konumda sayÄ±nÄ±n Ã¶nceden kullanÄ±ldÄ±ÄŸÄ±nÄ± tespit edebilmek iÃ§in  bir boolean dizi oluÅŸturduk.
 		
 		sekizVezirYazdir(vezirSayisi, konum, konumlar);
 	}
 
 	public static void sekizVezirYazdir(int vezirSayisi, int konum, boolean[] konumlar) {
-		for (int i = 0; i < vezirSayisi; i++) {   // Burada dış döngüde vezir sayısı kadar satırı ekrana yazdırdık.
-			System.out.print("|");					//Satırın başındaki | simgesi 1 defa yazdırıldı.
-			konum = rassalSayiBulIstenmeyenlerHaricinde(konum, vezirSayisi,konumlar);     // Burada istenmeyen sayılar haricinde  rassal sayı bulan metodu kullandık.
-																				//Birinci parametre olarak istenmeyen sayı ile ilgili değeri aldık.İkinci parametre olarak rastgele üretilecek olan sayının alabileceği değeri aldık.Bu ikinci parametre sütun sayısı olarak 3 den büyük olma şartı ile farklı bir değer alınabilir.
+		for (int i = 0; i < vezirSayisi; i++) {   // Burada dÄ±ÅŸ dÃ¶ngÃ¼de vezir sayÄ±sÄ± kadar satÄ±rÄ± ekrana yazdÄ±rdÄ±k.
+			System.out.print("|");					//SatÄ±rÄ±n baÅŸÄ±ndaki | simgesi 1 defa yazdÄ±rÄ±ldÄ±.
+			konum = rassalSayiBulIstenmeyenlerHaricinde(konum, vezirSayisi,konumlar);     // Burada istenmeyen sayÄ±lar haricinde  rassal sayÄ± bulan metodu kullandÄ±k.
+																				//Birinci parametre olarak istenmeyen sayÄ± ile ilgili deÄŸeri aldÄ±k.Ä°kinci parametre olarak rastgele Ã¼retilecek olan sayÄ±nÄ±n alabileceÄŸi deÄŸeri aldÄ±k.Bu ikinci parametre sÃ¼tun sayÄ±sÄ± olarak 3 den bÃ¼yÃ¼k olma ÅŸartÄ± ile farklÄ± bir deÄŸer alÄ±nabilir.
 			for (int j = 0; j < vezirSayisi; j++) {
 				if (konum != j) {
-					System.out.print("|");                 //Burada j değeri konum değerine eşit değilse | simgesini yazdırdık.
+					System.out.print("|");                 //Burada j deÄŸeri konum deÄŸerine eÅŸit deÄŸilse | simgesini yazdÄ±rdÄ±k.
 				} else {
-					System.out.print("Q");			 		// Burada j değeri konum değerine eşit ise Q simgesini yazdırdık.
+					System.out.print("Q");			 		// Burada j deÄŸeri konum deÄŸerine eÅŸit ise Q simgesini yazdÄ±rdÄ±k.
 				}
 			}
-			System.out.println("|");  // satrın sonundaki | simgesi bir defa yazdırıldı.
+			System.out.println("|");  // satÄ±rÄ±n sonundaki | simgesi bir defa yazdÄ±rÄ±ldÄ±.
 		}
 	}
 
-	public static int rassalSayiBulIstenmeyenlerHaricinde(int konum, int vezirSayisi,boolean[] konumlar) { // İstenmeyen sayılar haricinde ve maximum sayıya kadar rastgele bir sayı üreten metod yazdık.Bu metodun recursive metod olduğuna dikkat edilmelidir.
+	public static int rassalSayiBulIstenmeyenlerHaricinde(int konum, int vezirSayisi,boolean[] konumlar) { // Ä°stenmeyen sayÄ±lar haricinde ve maximum sayÄ±ya kadar rastgele bir sayÄ± Ã¼reten metod yazdÄ±k.Bu metodun recursive metod olduÄŸuna dikkat edilmelidir.
 		int kucuk = konum - 1;
 		int buyuk = konum + 1;
 		
 		int rassalSayi = (int) (Math.random() * vezirSayisi);
-		if (rassalSayi == kucuk || rassalSayi == buyuk || rassalSayi == konum || konumlar[rassalSayi]) {   // Burada istediğimiz rassalSayi'yi elde edene kadar aynı metodu tekrar tekrar çağırdık.Ve rassalSayi değerimiz uygun ise yani  bu if bloğuna girmediyse sayımızı metod sonunda return ettik.
+		if (rassalSayi == kucuk || rassalSayi == buyuk || rassalSayi == konum || konumlar[rassalSayi]) {   // Burada istediÄŸimiz rassalSayi'yi elde edene kadar aynÄ± metodu tekrar tekrar Ã§aÄŸÄ±rdÄ±k.Ve rassalSayi deÄŸerimiz uygun ise yani  bu if bloÄŸuna girmediyse sayÄ±mÄ±zÄ± metod sonunda return ettik.
 			rassalSayi = rassalSayiBulIstenmeyenlerHaricinde(konum, vezirSayisi,konumlar);
 		}
 	
-		konumlar[rassalSayi]=true;       // Dikey konumda sayının kullanıldığını onayladığımız bu son satırda  sayıyı return etmeden önce sayının konum bilgisi dizisine true değerini atadık.
+		konumlar[rassalSayi]=true;       // Dikey konumda sayÄ±nÄ±n kullanÄ±ldÄ±ÄŸÄ±nÄ± onayladÄ±ÄŸÄ±mÄ±z bu son satÄ±rda  sayÄ±yÄ± return etmeden Ã¶nce sayÄ±nÄ±n konum bilgisi dizisine true deÄŸerini atadÄ±k.
 		return rassalSayi;
 	}
 
-} // Vezir sayısı olarak istediğiniz değeri girebilirsiniz.
-// İstediğiniz sayıda vezir sayısı girdiğiniz bir program oluşturduk . Yalnız sütun sayısını da vezir sayısına eşitledik istersek bu sayı ayrı bir değişken olarak kullanıcıdan alınabilir. 
-//Ve ona göre sütun sayısında bir farklılık olabilir fakat 4 sütundan az olursa program çalışmayacaktır.Çünki oyunun ana kuralı olan algoritma çalışmayacak ve hata verecektir.
-//Mesela bu programda 3 veziri rastgele yerleştirmek istersek 3 sütun kullanılacağından program hata verecektir.
-// Yalnız bu algoritmada öyle bir ihtimal olurki öz yineleme methodu uygulanırken mesela son satırda hem dikey konum hemde yatay konumda bir sıkışma olabilir. Bu sıkışmada  program hata verecektir. Algoritma program hata verirse baştan başlayacak şekilde tasarlanabilir.
-// Fakat benim bilgim şu anda bu düzeyde olduğu için programı geliştirmeyi burada bıraktım.
+} // Vezir sayÄ±sÄ± olarak istediÄŸiniz deÄŸeri girebilirsiniz.
+// Ä°stediÄŸiniz sayÄ±da vezir sayÄ±sÄ± girdiÄŸiniz bir program oluÅŸturduk . YalnÄ±z sÃ¼tun sayÄ±sÄ±nÄ± da vezir sayÄ±sÄ±na eÅŸitledik istersek bu sayÄ± ayrÄ± bir deÄŸiÅŸken olarak kullanÄ±cÄ±dan alÄ±nabilir. 
+//Ve ona gÃ¶re sÃ¼tun sayÄ±sÄ±nda bir farklÄ±lÄ±k olabilir fakat 4 sÃ¼tundan az olursa program Ã§alÄ±ÅŸmayacaktÄ±r.Ã‡Ã¼nki oyunun ana kuralÄ± olan algoritma Ã§alÄ±ÅŸmayacak ve hata verecektir.
+//Mesela bu programda 3 veziri rastgele yerleÅŸtirmek istersek 3 sÃ¼tun kullanÄ±lacaÄŸÄ±ndan program hata verecektir.
+// YalnÄ±z bu algoritmada Ã¶yle bir ihtimal olurki Ã¶z yineleme methodu uygulanÄ±rken mesela son satÄ±rda hem dikey konum hemde yatay konumda bir sÄ±kÄ±ÅŸma olabilir. Bu sÄ±kÄ±ÅŸmada  program hata verecektir. Algoritma program hata verirse baÅŸtan baÅŸlayacak ÅŸekilde tasarlanabilir.
+// Fakat benim bilgim ÅŸu anda bu dÃ¼zeyde olduÄŸu iÃ§in programÄ± geliÅŸtirmeyi burada bÄ±raktÄ±m.
+
+
