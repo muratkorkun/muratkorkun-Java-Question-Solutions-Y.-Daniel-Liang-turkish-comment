@@ -60,8 +60,8 @@ Kullanýcýdan iki tane 3*3 boyutunda matris alan ve bu matrislerin çarpýmýný göst
 		
 	}
 	
-	public static double[][] matrisCarp(double[][] matris1, double[][] matris2) {  // Matrisleri carpma metodu.
-		
+	public static double[][] matrisCarp(double[][] matris1, double[][] matris2) {  // Matrisleri carpma metodu.Birinci matrisin  birinci satýrýn tüm elemanlarý ikinci matrisin birinci sutun elemanlarý ile 
+							//yine birinci matrisin birinci satýrýn tüm elemanlarý ikinci matrisin ikinci sutunun tektek  tüm elemanlarý ile çarpýmlarý toplanýyor. Bu böyle gidiyor algoritma bu þekildedir. 
 		double[][] c = new double[3][3];
 
 		for (int i = 0; i < c.length; i++) {
@@ -93,7 +93,7 @@ System.out.print("Matrislerin carpimi aþaðýdaki gibidir : \n");
 		
 	}
 
-	public static void matrisYazdir(double[][] matrisCarpim, int i) {
+	public static void matrisYazdir(double[][] matrisCarpim, int i) {  // Her bir matrisi  kendi içinde yazdiran metod. Dikkat edilirse diðer metod ile ayný isimde ve overloading yapýlmýþtýr.
 		for (int j = 0; j < matrisCarpim.length; j++) {
 			System.out.printf("%4.1f  ",matrisCarpim[i][j]);
 			}
