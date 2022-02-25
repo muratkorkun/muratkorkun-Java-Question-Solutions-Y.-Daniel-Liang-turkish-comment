@@ -27,7 +27,7 @@ Risk altýa olan bankalar : 3, 1
 
 	public static void main(String[] args) {
 		Scanner klavye=new Scanner(System.in);
-		System.out.println("Lütfen banka sayýsý ve limit deðeri giriniz : ");
+		System.out.println("Banka sayýsý ve limit deðeri giriniz : ");
 		int bankaSayisi=klavye.nextInt();
 		int limitDeger=klavye.nextInt();
 		System.out.println("Bankalarýn bakiye, borç verdiði banka sayýsý, borç verdiði bankalarýn nosu ve bu bankalara verdiði borç miktarlarýný sýrasý ile giriniz.");
@@ -98,6 +98,6 @@ Risk altýa olan bankalar : 3, 1
 		}
 	}
 }
-//		banka sayýsý ve limit deðeri 		5 201
+//		Banka sayýsý ve limit deðeri 		5 201
 //		Bankalarýn bakiye, borç verdiði banka sayýsý, borç verdiði bankalarýn nosu ve bu bankalara verdiði borç miktarlarý :	25 2 1 100,5 4 320,5 	125 2 2 40 3 85		175 2 0 125 3 75		75 1 0 125		181 1 2 125
 
