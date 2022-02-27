@@ -8,16 +8,9 @@ public class Sorular_8_22_CiftSayida1 {
 		
 		int[][] matris=matrisAl(6, 6);
 		matrisYazdir(matris);
-		boolean[][] satirVeSutunDurumu=satirVeSutunCiftKontrol(matris);
 		
-		for(int i=0; i < satirVeSutunDurumu.length; i++) {
-				if(satirVeSutunDurumu[i][0]) {
-					System.out.println("Matrisin "+i+"'inci  satýrýnda çift sayýda 1 vardýr.");   // Satiri eðer true ise yazdýrdýk.
-				}
-				if(satirVeSutunDurumu[i][1]) {
-					System.out.println("Matrisin "+i+"'inci  sütununda çift sayýda 1 vardýr.");		// Sütunu eðer true ise yazdýrdýk.
-				}
-		}
+		boolean satirVeSutunCiftMi=satirVeSutunCift1Durumu(matris, 1);
+		System.out.println("Matrisin her satýr ve sütununda çift 1 "+((satirVeSutunCiftMi)?"vardýr.":"yoktur."));
 		
 	}
 	
@@ -42,17 +35,16 @@ public class Sorular_8_22_CiftSayida1 {
 		}
 	}
 	
-	public static boolean[][] satirVeSutunCiftKontrol(int[][] matris) {
+	public static boolean satirVeSutunCift1Durumu(int[][] matris,int arananSayi) {
 		boolean[][] satirVeSutunDurumu=new boolean[matris.length][2];
-		
 		for(int i=0; i < matris.length;i++) {
 			int satirBirSayisi=0;
 			int sutunBirSayisi=0;
 			for(int j=0; j < matris[i].length; j++) {
-				if(matris[i][j] == 1) {
+				if(matris[i][j] == arananSayi) {
 					satirBirSayisi++;
 				}
-				if(matris[j][i] == 1) {
+				if(matris[j][i] == arananSayi) {
 					sutunBirSayisi++;
 				}
 			}
@@ -62,8 +54,14 @@ public class Sorular_8_22_CiftSayida1 {
 			if(sutunBirSayisi % 2 == 0 && sutunBirSayisi != 0) {
 				satirVeSutunDurumu[i][1]=true;
 			}
+			if(satirVeSutunDurumu[i][0] ==false || satirVeSutunDurumu[i][1] == false) {
+				return false;
+			}
+			
 		}
-		return satirVeSutunDurumu;
+		return true;
 	}
+	
+	
 	
 }
