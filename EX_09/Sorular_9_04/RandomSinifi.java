@@ -10,8 +10,13 @@ public class RandomSinifi {
 		Random r1=new Random(1000);
 		
 		for (int i = 0; i < 50; i++) {
+			
 			System.out.printf("%4d",r1.nextInt(100));
+			if((i+1) %10 == 0) {
+				System.out.println();
+			}
 		}
+		
 		
 	}
 
