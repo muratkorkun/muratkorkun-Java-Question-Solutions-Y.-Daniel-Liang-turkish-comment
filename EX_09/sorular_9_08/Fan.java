@@ -36,7 +36,7 @@ public class Fan {
 		this.speed=SLOW;
 		this.on=false;
 		this.radius=5;
-		this.color="mavi";
+		this.color="Mavi";
 	}
 	//setter metodlarý
 	 public void setSpeed(int speed) {
@@ -52,7 +52,13 @@ public class Fan {
 		this.color=color;
 	}
 	//getter metodlarý
-	public int getSpeed() {
+	public String getSpeed() {
+		String speed="";
+		switch (this.speed) {
+		case SLOW: speed="SLOW";break;
+		case MEDIUM: speed="MEDIUM";break;
+		default:speed="FAST";break;
+		}
 		return speed;
 	}
 	public boolean isOn() {
@@ -66,6 +72,6 @@ public class Fan {
 	}
 	// Fan durumunu String çýktý veren metod.
 	public String toString() {
-		return	"Fan durumu : "+(isOn()?"açýk":"kapalý")+ " hýzý: "+(isOn()?speed:0)+"  rengi: "+color+"  açýsý: "+radius;
+		return	"Fan durumu : "+(isOn()?"Açýk  hýzý: "+getSpeed():"Kapalý  hýzý: YOK")+" rengi: "+color+"  açýsý: "+radius;
 	}
 }
