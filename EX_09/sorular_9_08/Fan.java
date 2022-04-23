@@ -2,9 +2,9 @@ package Bolum09BenimYazdiklarim.sorular_9_08;
 /*------------UML Class Diagram--------------------
  * 	Fan
  * --------------------------
- * 	-_SLOW: int
- * 	-_MEDIUM: int
- * 	-_FAST: int
+ * 	+_SLOW: int
+ * 	+_MEDIUM: int
+ * 	+_FAST: int
  * 	-speed: int
  * 	-on: boolean
  * 	-radius: double
@@ -24,9 +24,9 @@ package Bolum09BenimYazdiklarim.sorular_9_08;
  * @yazar Muratkorkun
  */
 public class Fan {
-	private static final int SLOW = 1;
-	private static final int MEDIUM =2;
-	private static final int FAST = 3;
+	public static final int SLOW = 1;
+	public static final int MEDIUM =2;
+	public static final int FAST = 3;
 	private int speed ;
 	private boolean on;
 	private double radius;
